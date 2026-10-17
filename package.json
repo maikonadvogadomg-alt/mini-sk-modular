@@ -1,0 +1,49 @@
+{
+  "name": "mini-sk-modular",
+  "version": "1.0.0",
+  "description": "Mini SK (modular)",
+  "author": "Maikon",
+  "private": true,
+  "main": "electron/main.cjs",
+  "portaDoPrograma": 7903,
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.maikonadvogadomgalt.miniskmodular.pc",
+    "productName": "Mini SK (modular)",
+    "executableName": "mini-sk-modular",
+    "directories": {
+      "output": "release"
+    },
+    "asar": false,
+    "files": [
+      "**/*",
+      "!android/**",
+      "!.github/**",
+      "!release/**",
+      "!node_modules/.cache/**",
+      "!*.zip",
+      "!.sk/**",
+      "!apk.config.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Mini SK (modular)",
+      "artifactName": "mini-sk-modular-Instalar.exe"
+    },
+    "portable": {
+      "artifactName": "mini-sk-modular-sem-instalar.exe"
+    }
+  }
+}
